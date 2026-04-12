@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="chip_text_selected">#FFFFFF</color>
+    <color name="chip_text_unselected">#1A1A1A</color>
+    <color name="gray_light">#FFF5F5F5</color>
+    <color name="gray_medium">#FF666666</color>
+    <color name="primary">#FF1A1A1A</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">ReRead</string>
+    <style name="Theme.ReRead" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#1A1A1A</item>
+        <item name="colorPrimaryVariant">#333333</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#555555</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="Theme.ReRead.NoActionBar" parent="Theme.ReRead">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>
