@@ -13,7 +13,9 @@ import androidx.appcompat.widget.Toolbar
 import com.reread.app.R
 import com.reread.app.data.Book
 import com.reread.app.data.CartManager
+import com.reread.app.data.MessagingRepository
 import com.reread.app.ui.cart.CartActivity
+import com.reread.app.ui.messaging.ChatActivity
 import com.reread.app.utils.SessionManager
 
 class BookDetailActivity : AppCompatActivity() {
@@ -35,6 +37,7 @@ class BookDetailActivity : AppCompatActivity() {
         val category  = intent.getStringExtra("book_category") ?: ""
         val desc      = intent.getStringExtra("book_description") ?: "No description provided."
         val seller    = intent.getStringExtra("book_seller") ?: ""
+        val sellerId  = intent.getIntExtra("book_seller_id", -1)
 
         findViewById<TextView>(R.id.tv_detail_title).text       = title
         findViewById<TextView>(R.id.tv_detail_author).text      = "by $author"
@@ -44,15 +47,19 @@ class BookDetailActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_detail_description).text = desc
         findViewById<TextView>(R.id.tv_detail_seller).text      = "Sold by: $seller"
 
-        val btnAddToCart = findViewById<Button>(R.id.btn_add_to_cart)
-        val tvSwitchMode = findViewById<TextView>(R.id.tv_switch_to_buyer)
-        val session      = SessionManager(this)
+        val btnAddToCart     = findViewById<Button>(R.id.btn_add_to_cart)
+        val btnMessageSeller = findViewById<Button>(R.id.btn_message_seller)
+        val tvSwitchMode     = findViewById<TextView>(R.id.tv_switch_to_buyer)
+        val session          = SessionManager(this)
 
         when (session.role) {
             "buyer" -> {
-                btnAddToCart.visibility = View.VISIBLE
-                tvSwitchMode.visibility = View.GONE
+                btnAddToCart.visibility     = View.VISIBLE
+                btnMessageSeller.visibility = View.VISIBLE
+                tvSwitchMode.visibility     = View.GONE
+
                 updateCartButton(btnAddToCart, bookId)
+
                 btnAddToCart.setOnClickListener {
                     if (CartManager.isInCart(bookId)) {
                         startActivity(Intent(this, CartActivity::class.java))
@@ -73,10 +80,32 @@ class BookDetailActivity : AppCompatActivity() {
                         Toast.makeText(this, "Added to cart!", Toast.LENGTH_SHORT).show()
                     }
                 }
+
+                btnMessageSeller.setOnClickListener {
+                    if (sellerId == -1) {
+                        Toast.makeText(this, "Cannot message this seller", Toast.LENGTH_SHORT).show()
+                        return@setOnClickListener
+                    }
+                    val repo = MessagingRepository(this)
+                    val conversationId = repo.getOrCreateConversation(
+                        bookId        = bookId,
+                        bookTitle     = title,
+                        buyerId       = session.userId,
+                        buyerUsername = session.username,
+                        sellerId      = sellerId,
+                        sellerUsername = seller
+                    )
+                    val intent = Intent(this, ChatActivity::class.java)
+                    intent.putExtra("conversation_id", conversationId)
+                    intent.putExtra("book_title", title)
+                    intent.putExtra("other_username", seller)
+                    startActivity(intent)
+                }
             }
             else -> {
-                btnAddToCart.visibility = View.GONE
-                tvSwitchMode.visibility = View.VISIBLE
+                btnAddToCart.visibility     = View.GONE
+                btnMessageSeller.visibility = View.GONE
+                tvSwitchMode.visibility     = View.VISIBLE
             }
         }
     }

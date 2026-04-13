@@ -9,7 +9,7 @@ class DatabaseHelper(context: Context) :
 
     companion object {
         const val DATABASE_NAME = "reread.db"
-        const val DATABASE_VERSION = 3
+        const val DATABASE_VERSION = 4
 
         // Users table
         const val TABLE_USERS = "users"
@@ -36,6 +36,12 @@ class DatabaseHelper(context: Context) :
         const val COL_IMAGE_PATH = "image_path"
         const val COL_IS_AVAILABLE = "is_available"
         const val COL_BOOK_CREATED_AT = "created_at"
+
+        // Conversations table
+        const val TABLE_CONVERSATIONS = "conversations"
+
+        // Messages table
+        const val TABLE_MESSAGES = "messages"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -90,6 +96,36 @@ class DatabaseHelper(context: Context) :
             """.trimIndent()
         )
 
+        db.execSQL(
+            """
+            CREATE TABLE $TABLE_CONVERSATIONS (
+                id               INTEGER PRIMARY KEY AUTOINCREMENT,
+                book_id          INTEGER NOT NULL,
+                book_title       TEXT    NOT NULL,
+                buyer_id         INTEGER NOT NULL,
+                buyer_username   TEXT    NOT NULL,
+                seller_id        INTEGER NOT NULL,
+                seller_username  TEXT    NOT NULL,
+                last_message     TEXT    DEFAULT '',
+                last_message_at  INTEGER NOT NULL DEFAULT 0
+            )
+            """.trimIndent()
+        )
+
+        db.execSQL(
+            """
+            CREATE TABLE $TABLE_MESSAGES (
+                id               INTEGER PRIMARY KEY AUTOINCREMENT,
+                conversation_id  INTEGER NOT NULL,
+                sender_id        INTEGER NOT NULL,
+                sender_username  TEXT    NOT NULL,
+                content          TEXT    NOT NULL,
+                sent_at          INTEGER NOT NULL,
+                FOREIGN KEY(conversation_id) REFERENCES $TABLE_CONVERSATIONS(id)
+            )
+            """.trimIndent()
+        )
+
         // Seed admin account
         db.execSQL(
             """
@@ -122,44 +158,72 @@ class DatabaseHelper(context: Context) :
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 2) {
-            // Add books table
             db.execSQL(
                 """
-            CREATE TABLE IF NOT EXISTS $TABLE_BOOKS (
-                $COL_BOOK_ID         INTEGER PRIMARY KEY AUTOINCREMENT,
-                $COL_SELLER_ID       INTEGER NOT NULL,
-                $COL_TITLE           TEXT    NOT NULL,
-                $COL_AUTHOR          TEXT    NOT NULL,
-                $COL_ISBN            TEXT    DEFAULT '',
-                $COL_PRICE           REAL    NOT NULL,
-                $COL_CONDITION       TEXT    NOT NULL,
-                $COL_CATEGORY        TEXT    NOT NULL,
-                $COL_SUBCATEGORY     TEXT    DEFAULT '',
-                $COL_DESCRIPTION     TEXT    DEFAULT '',
-                $COL_IMAGE_PATH      TEXT    DEFAULT '',
-                $COL_IS_AVAILABLE    INTEGER NOT NULL DEFAULT 1,
-                $COL_BOOK_CREATED_AT TEXT    NOT NULL,
-                FOREIGN KEY($COL_SELLER_ID) REFERENCES $TABLE_USERS($COL_USER_ID)
-            )
-            """.trimIndent()
+                CREATE TABLE IF NOT EXISTS $TABLE_BOOKS (
+                    $COL_BOOK_ID         INTEGER PRIMARY KEY AUTOINCREMENT,
+                    $COL_SELLER_ID       INTEGER NOT NULL,
+                    $COL_TITLE           TEXT    NOT NULL,
+                    $COL_AUTHOR          TEXT    NOT NULL,
+                    $COL_ISBN            TEXT    DEFAULT '',
+                    $COL_PRICE           REAL    NOT NULL,
+                    $COL_CONDITION       TEXT    NOT NULL,
+                    $COL_CATEGORY        TEXT    NOT NULL,
+                    $COL_SUBCATEGORY     TEXT    DEFAULT '',
+                    $COL_DESCRIPTION     TEXT    DEFAULT '',
+                    $COL_IMAGE_PATH      TEXT    DEFAULT '',
+                    $COL_IS_AVAILABLE    INTEGER NOT NULL DEFAULT 1,
+                    $COL_BOOK_CREATED_AT TEXT    NOT NULL,
+                    FOREIGN KEY($COL_SELLER_ID) REFERENCES $TABLE_USERS($COL_USER_ID)
+                )
+                """.trimIndent()
             )
         }
         if (oldVersion < 3) {
-            // Add purchased_books table
             db.execSQL(
                 """
-            CREATE TABLE IF NOT EXISTS purchased_books (
-                id           INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id      INTEGER NOT NULL,
-                book_id      INTEGER NOT NULL,
-                order_id     TEXT    NOT NULL,
-                title        TEXT    NOT NULL,
-                author       TEXT    NOT NULL,
-                price        REAL    NOT NULL,
-                condition    TEXT    NOT NULL,
-                purchased_at TEXT    NOT NULL
+                CREATE TABLE IF NOT EXISTS purchased_books (
+                    id           INTEGER PRIMARY KEY AUTOINCREMENT,
+                    user_id      INTEGER NOT NULL,
+                    book_id      INTEGER NOT NULL,
+                    order_id     TEXT    NOT NULL,
+                    title        TEXT    NOT NULL,
+                    author       TEXT    NOT NULL,
+                    price        REAL    NOT NULL,
+                    condition    TEXT    NOT NULL,
+                    purchased_at TEXT    NOT NULL
+                )
+                """.trimIndent()
             )
-            """.trimIndent()
+        }
+        if (oldVersion < 4) {
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS $TABLE_CONVERSATIONS (
+                    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+                    book_id          INTEGER NOT NULL,
+                    book_title       TEXT    NOT NULL,
+                    buyer_id         INTEGER NOT NULL,
+                    buyer_username   TEXT    NOT NULL,
+                    seller_id        INTEGER NOT NULL,
+                    seller_username  TEXT    NOT NULL,
+                    last_message     TEXT    DEFAULT '',
+                    last_message_at  INTEGER NOT NULL DEFAULT 0
+                )
+                """.trimIndent()
+            )
+            db.execSQL(
+                """
+                CREATE TABLE IF NOT EXISTS $TABLE_MESSAGES (
+                    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+                    conversation_id  INTEGER NOT NULL,
+                    sender_id        INTEGER NOT NULL,
+                    sender_username  TEXT    NOT NULL,
+                    content          TEXT    NOT NULL,
+                    sent_at          INTEGER NOT NULL,
+                    FOREIGN KEY(conversation_id) REFERENCES $TABLE_CONVERSATIONS(id)
+                )
+                """.trimIndent()
             )
         }
     }

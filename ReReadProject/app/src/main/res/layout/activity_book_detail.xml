@@ -121,11 +121,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:text="Add to Cart"
                 android:textSize="16sp"
                 android:backgroundTint="#1A1A1A"
                 android:textColor="@color/buttonTextColor"/>
+
+            <Button
+                android:id="@+id/btn_message_seller"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="16dp"
+                android:text="Message Seller"
+                android:textSize="16sp"
+                android:backgroundTint="#007AFF"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/tv_switch_to_buyer"

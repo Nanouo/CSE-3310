@@ -42,14 +42,17 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
         btnBuyer.setOnClickListener {
             session.setRole("buyer")
             updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
+            dismiss()
         }
         btnSeller.setOnClickListener {
             session.setRole("seller")
             updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
+            dismiss()
         }
         btnAdmin.setOnClickListener {
             session.setRole("admin")
             updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
+            dismiss()
         }
 
         // Dark mode toggle

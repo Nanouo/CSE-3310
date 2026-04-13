@@ -19,6 +19,7 @@ import com.reread.app.ui.account.AccountBottomSheet
 import com.reread.app.ui.admin.AdminBottomSheet
 import com.reread.app.ui.collection.CollectionBottomSheet
 import com.reread.app.ui.listings.MyListingsBottomSheet
+import com.reread.app.ui.messaging.InboxActivity
 import com.reread.app.utils.SessionManager
 import com.reread.app.viewmodel.HomeViewModel
 
@@ -65,10 +66,12 @@ class HomeActivity : AppCompatActivity() {
             }
         }
     }
+
     override fun onResume() {
         super.onResume()
         updateBottomNav()
     }
+
     private fun setupRecyclerView() {
         adapter = BookAdapter { book -> openBookDetail(book) }
         recyclerView.layoutManager = GridLayoutManager(this, 2)
@@ -120,7 +123,9 @@ class HomeActivity : AppCompatActivity() {
         chip.setTextColor(ContextCompat.getColor(this, R.color.chip_text_selected))
         viewModel.filterByCategory(category)
     }
+
     private fun currentRole() = session.role
+
     private fun updateBottomNav() {
         val menu = bottomNav.menu
         menu.clear()
@@ -133,19 +138,21 @@ class HomeActivity : AppCompatActivity() {
         when (role) {
             "admin" -> menu.add(0, R.id.nav_listings, 1, "Admin Panel")
                 .setIcon(R.drawable.ic_admin)
-
             "buyer" -> menu.add(0, R.id.nav_listings, 1, "Collection")
                 .setIcon(R.drawable.ic_collection)
-
             else -> menu.add(0, R.id.nav_listings, 1, "My Listings")
                 .setIcon(R.drawable.ic_listings)
         }
 
-        menu.add(0, R.id.nav_account, 2, "Account")
+        menu.add(0, R.id.nav_inbox, 2, "Inbox")
+            .setIcon(R.drawable.ic_inbox)
+
+        menu.add(0, R.id.nav_account, 3, "Account")
             .setIcon(R.drawable.ic_account)
 
         bottomNav.selectedItemId = R.id.nav_home
     }
+
     private fun setupBottomNav() {
         updateBottomNav()
         bottomNav.selectedItemId = R.id.nav_home
@@ -161,6 +168,10 @@ class HomeActivity : AppCompatActivity() {
                     }
                     false
                 }
+                R.id.nav_inbox -> {
+                    startActivity(Intent(this, InboxActivity::class.java))
+                    false
+                }
                 R.id.nav_account -> {
                     if (accountSheet == null) {
                         accountSheet = AccountBottomSheet()
@@ -172,6 +183,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun observeViewModel() {
         viewModel.books.observe(this) { books ->
             adapter.submitList(books)
@@ -193,6 +205,7 @@ class HomeActivity : AppCompatActivity() {
         intent.putExtra("book_category", book.category)
         intent.putExtra("book_description", book.description)
         intent.putExtra("book_seller", book.sellerUsername)
+        intent.putExtra("book_seller_id", book.sellerId)
         startActivity(intent)
     }
 }
