@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="14sp"
-                android:textColor="#1A1A1A"
+                android:textColor="@color/textColor"
                 android:maxLines="2"
                 android:ellipsize="end"/>
 
@@ -61,7 +61,7 @@
                     android:layout_weight="1"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    android:textColor="#1A1A1A"/>
+                    android:textColor="@color/textColor"/>
 
                 <TextView
                     android:id="@+id/tv_my_listing_condition"
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
                     android:textColor="@color/gray_medium"
-                    android:background="@color/gray_light"
+                    android:background="@color/labelColor"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:paddingTop="2dp"
@@ -111,6 +111,8 @@
                 android:layout_width="64dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="4dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
                 android:text="Delete"
                 android:textSize="11sp"
                 android:backgroundTint="#FF3B30"

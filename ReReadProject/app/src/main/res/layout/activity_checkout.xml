@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -28,7 +28,7 @@
                 android:text="Order Summary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"/>
+                android:textColor="@color/textColor"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,7 +66,7 @@
                 android:text="Contact Information"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"
+                android:textColor="@color/textColor"
                 android:layout_marginBottom="12dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -123,7 +123,7 @@
                 android:text="Payment Method"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"
+                android:textColor="@color/textColor"
                 android:layout_marginBottom="12dp"/>
 
             <RadioGroup
@@ -138,7 +138,7 @@
                     android:layout_height="48dp"
                     android:text="💳  Credit / Debit Card"
                     android:textSize="15sp"
-                    android:textColor="#1A1A1A"
+                    android:textColor="@color/textColor"
                     android:checked="true"/>
 
                 <RadioButton
@@ -147,7 +147,7 @@
                     android:layout_height="48dp"
                     android:text="🍎  Apple Pay"
                     android:textSize="15sp"
-                    android:textColor="#1A1A1A"/>
+                    android:textColor="@color/textColor"/>
 
                 <RadioButton
                     android:id="@+id/rb_googlepay"
@@ -155,7 +155,7 @@
                     android:layout_height="48dp"
                     android:text="🔵  Google Pay"
                     android:textSize="15sp"
-                    android:textColor="#1A1A1A"/>
+                    android:textColor="@color/textColor"/>
 
                 <RadioButton
                     android:id="@+id/rb_cashapp"
@@ -163,7 +163,7 @@
                     android:layout_height="48dp"
                     android:text="💚  Cash App"
                     android:textSize="15sp"
-                    android:textColor="#1A1A1A"/>
+                    android:textColor="@color/textColor"/>
 
             </RadioGroup>
 
@@ -175,7 +175,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="@color/white"
+        android:background="@color/background"
         android:elevation="8dp">
 
         <Button
@@ -185,7 +185,7 @@
             android:text="Place Order"
             android:textSize="16sp"
             android:backgroundTint="#1A1A1A"
-            android:textColor="@color/white"/>
+            android:textColor="@color/buttonTextColor"/>
 
     </LinearLayout>
 

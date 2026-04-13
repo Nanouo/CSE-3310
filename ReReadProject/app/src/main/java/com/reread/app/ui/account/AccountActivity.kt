@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.reread.app.R
 import com.reread.app.ui.auth.LoginActivity
+import com.reread.app.ui.home.HomeActivity
 import com.reread.app.utils.SessionManager
 
 class AccountActivity : AppCompatActivity() {
@@ -80,8 +81,9 @@ class AccountActivity : AppCompatActivity() {
     }
 
     private fun restartHome() {
-        val intent = Intent(this, com.reread.app.ui.home.HomeActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        val intent = Intent(this, HomeActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         startActivity(intent)
+        finish()
     }
 }

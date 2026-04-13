@@ -9,227 +9,227 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.CAMERA" />
-11-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:4:5-64
-11-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:4:22-62
+11-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:4:5-64
+11-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:4:22-62
 12    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-12-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:5:5-75
-12-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:5:22-73
+12-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:5:5-75
+12-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:5:22-73
 13    <uses-permission
-13-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:6:5-7:37
+13-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:6:5-7:37
 14        android:name="android.permission.READ_EXTERNAL_STORAGE"
-14-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:6:22-77
+14-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:6:22-77
 15        android:maxSdkVersion="32" />
-15-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:7:9-35
+15-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:7:9-35
 16
 17    <permission
-17-->[androidx.core:core:1.12.0] C:\Users\o_uyu\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+17-->[androidx.core:core:1.12.0] C:\Users\Denni\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
 18        android:name="com.reread.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-18-->[androidx.core:core:1.12.0] C:\Users\o_uyu\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+18-->[androidx.core:core:1.12.0] C:\Users\Denni\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
 19        android:protectionLevel="signature" />
-19-->[androidx.core:core:1.12.0] C:\Users\o_uyu\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+19-->[androidx.core:core:1.12.0] C:\Users\Denni\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 20
 21    <uses-permission android:name="com.reread.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-21-->[androidx.core:core:1.12.0] C:\Users\o_uyu\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-21-->[androidx.core:core:1.12.0] C:\Users\o_uyu\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+21-->[androidx.core:core:1.12.0] C:\Users\Denni\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.12.0] C:\Users\Denni\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 22
 23    <application
-23-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:9:5-87:19
+23-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:9:5-87:19
 24        android:allowBackup="true"
-24-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:10:9-35
+24-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:10:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.12.0] C:\Users\o_uyu\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+25-->[androidx.core:core:1.12.0] C:\Users\Denni\.gradle\caches\transforms-3\440a64c1659b3784956be1ef27019da1\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:icon="@mipmap/ic_launcher"
-28-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:11:9-43
+28-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:11:9-43
 29        android:label="@string/app_name"
-29-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:12:9-41
+29-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:12:9-41
 30        android:roundIcon="@mipmap/ic_launcher_round"
-30-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:13:9-54
+30-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:13:9-54
 31        android:supportsRtl="true"
-31-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:14:9-35
+31-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:14:9-35
 32        android:testOnly="true"
 33        android:theme="@style/Theme.ReRead" >
-33-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:15:9-44
+33-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:15:9-44
 34        <activity
-34-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:17:9-25:20
+34-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:17:9-25:20
 35            android:name="com.reread.app.ui.auth.SplashActivity"
-35-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:18:13-51
+35-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:18:13-51
 36            android:exported="true"
-36-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:19:13-36
+36-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:19:13-36
 37            android:theme="@style/Theme.ReRead.NoActionBar" >
-37-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:20:13-60
+37-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:20:13-60
 38            <intent-filter>
-38-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:21:13-24:29
+38-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:21:13-24:29
 39                <action android:name="android.intent.action.MAIN" />
-39-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:22:17-69
-39-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:22:25-66
+39-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:22:17-69
+39-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:22:25-66
 40
 41                <category android:name="android.intent.category.LAUNCHER" />
-41-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:23:17-77
-41-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:23:27-74
+41-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:23:17-77
+41-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:23:27-74
 42            </intent-filter>
 43        </activity>
 44        <activity
-44-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:27:9-30:58
+44-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:27:9-30:58
 45            android:name="com.reread.app.ui.auth.LoginActivity"
-45-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:28:13-50
+45-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:28:13-50
 46            android:exported="false"
-46-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:29:13-37
+46-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:29:13-37
 47            android:windowSoftInputMode="adjustResize" />
-47-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:30:13-55
+47-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:30:13-55
 48        <activity
-48-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:32:9-35:58
+48-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:32:9-35:58
 49            android:name="com.reread.app.ui.auth.RegisterActivity"
-49-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:33:13-53
+49-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:33:13-53
 50            android:exported="false"
-50-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:34:13-37
+50-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:34:13-37
 51            android:windowSoftInputMode="adjustResize" />
-51-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:35:13-55
+51-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:35:13-55
 52        <activity
-52-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:37:9-40:62
+52-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:37:9-40:62
 53            android:name="com.reread.app.ui.home.HomeActivity"
-53-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:38:13-49
+53-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:38:13-49
 54            android:exported="false"
-54-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:39:13-37
+54-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:39:13-37
 55            android:theme="@style/Theme.ReRead.NoActionBar" />
-55-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:40:13-60
+55-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:40:13-60
 56        <activity
-56-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:42:9-45:62
+56-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:42:9-45:62
 57            android:name="com.reread.app.ui.home.BookDetailActivity"
-57-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:43:13-55
+57-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:43:13-55
 58            android:exported="false"
-58-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:44:13-37
+58-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:44:13-37
 59            android:theme="@style/Theme.ReRead.NoActionBar" />
-59-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:45:13-60
+59-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:45:13-60
 60        <activity
-60-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:47:9-50:62
+60-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:47:9-50:62
 61            android:name="com.reread.app.ui.listings.MyListingsActivity"
-61-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:48:13-59
+61-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:48:13-59
 62            android:exported="false"
-62-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:49:13-37
+62-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:49:13-37
 63            android:theme="@style/Theme.ReRead.NoActionBar" />
-63-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:50:13-60
+63-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:50:13-60
 64        <activity
-64-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:52:9-55:62
+64-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:52:9-55:62
 65            android:name="com.reread.app.ui.account.AccountActivity"
-65-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:53:13-55
+65-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:53:13-55
 66            android:exported="false"
-66-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:54:13-37
+66-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:54:13-37
 67            android:theme="@style/Theme.ReRead.NoActionBar" />
-67-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:55:13-60
+67-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:55:13-60
 68        <activity
-68-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:57:9-60:62
+68-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:57:9-60:62
 69            android:name="com.reread.app.ui.cart.CartActivity"
-69-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:58:13-49
+69-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:58:13-49
 70            android:exported="false"
-70-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:59:13-37
+70-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:59:13-37
 71            android:theme="@style/Theme.ReRead.NoActionBar" />
-71-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:60:13-60
+71-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:60:13-60
 72        <activity
-72-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:62:9-65:62
+72-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:62:9-65:62
 73            android:name="com.reread.app.ui.checkout.CheckoutActivity"
-73-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:63:13-57
+73-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:63:13-57
 74            android:exported="false"
-74-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:64:13-37
+74-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:64:13-37
 75            android:theme="@style/Theme.ReRead.NoActionBar" />
-75-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:65:13-60
+75-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:65:13-60
 76        <activity
-76-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:67:9-70:62
+76-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:67:9-70:62
 77            android:name="com.reread.app.ui.checkout.OrderConfirmationActivity"
-77-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:68:13-66
+77-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:68:13-66
 78            android:exported="false"
-78-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:69:13-37
+78-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:69:13-37
 79            android:theme="@style/Theme.ReRead.NoActionBar" />
-79-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:70:13-60
+79-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:70:13-60
 80        <activity
-80-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:72:9-75:62
+80-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:72:9-75:62
 81            android:name="com.reread.app.ui.collection.CollectionActivity"
-81-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:73:13-61
+81-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:73:13-61
 82            android:exported="false"
-82-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:74:13-37
+82-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:74:13-37
 83            android:theme="@style/Theme.ReRead.NoActionBar" />
-83-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:75:13-60
+83-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:75:13-60
 84        <activity
-84-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:77:9-80:62
+84-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:77:9-80:62
 85            android:name="com.reread.app.ui.admin.AdminActivity"
-85-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:78:13-51
+85-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:78:13-51
 86            android:exported="false"
-86-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:79:13-37
+86-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:79:13-37
 87            android:theme="@style/Theme.ReRead.NoActionBar" />
-87-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:80:13-60
+87-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:80:13-60
 88        <activity
-88-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:82:9-85:62
+88-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:82:9-85:62
 89            android:name="com.reread.app.ui.listings.AddListingActivity"
-89-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:83:13-59
+89-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:83:13-59
 90            android:exported="false"
-90-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:84:13-37
+90-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:84:13-37
 91            android:theme="@style/Theme.ReRead.NoActionBar" />
-91-->C:\Users\o_uyu\Downloads\ReRead (1)\ReReadProject\app\src\main\AndroidManifest.xml:85:13-60
+91-->C:\Users\Denni\AndroidStudioProjects\CSE-3310\ReReadProject\app\src\main\AndroidManifest.xml:85:13-60
 92
 93        <provider
-93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 94            android:name="androidx.startup.InitializationProvider"
-94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
 95            android:authorities="com.reread.app.androidx-startup"
-95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
 96            android:exported="false" >
-96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 97            <meta-data
-97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+97-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 98                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+98-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 99                android:value="androidx.startup" />
-99-->[androidx.emoji2:emoji2:1.2.0] C:\Users\o_uyu\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+99-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Denni\.gradle\caches\transforms-3\40af677edc9e981bf1ec9bb11c8b1d32\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 100            <meta-data
-100-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\o_uyu\.gradle\caches\transforms-3\01096349b0936ba7f741e909295c017b\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+100-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Denni\.gradle\caches\transforms-3\01096349b0936ba7f741e909295c017b\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
 101                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-101-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\o_uyu\.gradle\caches\transforms-3\01096349b0936ba7f741e909295c017b\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+101-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Denni\.gradle\caches\transforms-3\01096349b0936ba7f741e909295c017b\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
 102                android:value="androidx.startup" />
-102-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\o_uyu\.gradle\caches\transforms-3\01096349b0936ba7f741e909295c017b\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+102-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Denni\.gradle\caches\transforms-3\01096349b0936ba7f741e909295c017b\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
 103            <meta-data
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 104                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
 105                android:value="androidx.startup" />
-105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
 106        </provider>
 107
 108        <receiver
-108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
 109            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
 110            android:directBootAware="false"
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
 111            android:enabled="true"
-111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
 112            android:exported="true"
-112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
 113            android:permission="android.permission.DUMP" >
-113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 114            <intent-filter>
-114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
 115                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 116            </intent-filter>
 117            <intent-filter>
-117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
 118                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 119            </intent-filter>
 120            <intent-filter>
-120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
 121                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
 122            </intent-filter>
 123            <intent-filter>
-123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
 124                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-124-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-124-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\o_uyu\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Denni\.gradle\caches\transforms-3\4dbbd11a74d28bd64c37893cccf57482\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
 125            </intent-filter>
 126        </receiver>
 127    </application>

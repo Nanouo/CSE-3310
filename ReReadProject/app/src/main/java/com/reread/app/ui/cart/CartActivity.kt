@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.reread.app.R
@@ -30,6 +31,7 @@ class CartActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "My Cart"
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         tvTotal      = findViewById(R.id.tv_total)

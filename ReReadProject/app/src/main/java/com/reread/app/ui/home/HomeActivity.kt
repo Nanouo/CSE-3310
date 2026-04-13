@@ -36,6 +36,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var bottomNav: BottomNavigationView
 
     private val categories = listOf("All", "Academic", "Fiction", "Non-Fiction", "Biography", "Documentary")
+    private var accountSheet: AccountBottomSheet? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +59,16 @@ class HomeActivity : AppCompatActivity() {
         setupCategories()
         setupBottomNav()
         observeViewModel()
+        SessionManager.setRoleChangeListener {
+            runOnUiThread {
+                updateBottomNav()
+            }
+        }
     }
-
+    override fun onResume() {
+        super.onResume()
+        updateBottomNav()
+    }
     private fun setupRecyclerView() {
         adapter = BookAdapter { book -> openBookDetail(book) }
         recyclerView.layoutManager = GridLayoutManager(this, 2)
@@ -111,35 +120,41 @@ class HomeActivity : AppCompatActivity() {
         chip.setTextColor(ContextCompat.getColor(this, R.color.chip_text_selected))
         viewModel.filterByCategory(category)
     }
-
-    private fun setupBottomNav() {
-        val role = session.role
+    private fun currentRole() = session.role
+    private fun updateBottomNav() {
         val menu = bottomNav.menu
+        menu.clear()
+
+        val role = session.role
+
+        menu.add(0, R.id.nav_home, 0, "Home")
+            .setIcon(R.drawable.ic_home)
 
         when (role) {
-            "admin" -> {
-                menu.findItem(R.id.nav_listings).title = "Admin Panel"
-                menu.findItem(R.id.nav_listings).icon =
-                    ContextCompat.getDrawable(this, R.drawable.ic_admin)
-            }
-            "buyer" -> {
-                menu.findItem(R.id.nav_listings).title = "Collection"
-                menu.findItem(R.id.nav_listings).icon =
-                    ContextCompat.getDrawable(this, R.drawable.ic_collection)
-            }
-            else -> {
-                menu.findItem(R.id.nav_listings).title = "My Listings"
-                menu.findItem(R.id.nav_listings).icon =
-                    ContextCompat.getDrawable(this, R.drawable.ic_listings)
-            }
+            "admin" -> menu.add(0, R.id.nav_listings, 1, "Admin Panel")
+                .setIcon(R.drawable.ic_admin)
+
+            "buyer" -> menu.add(0, R.id.nav_listings, 1, "Collection")
+                .setIcon(R.drawable.ic_collection)
+
+            else -> menu.add(0, R.id.nav_listings, 1, "My Listings")
+                .setIcon(R.drawable.ic_listings)
         }
 
+        menu.add(0, R.id.nav_account, 2, "Account")
+            .setIcon(R.drawable.ic_account)
+
+        bottomNav.selectedItemId = R.id.nav_home
+    }
+    private fun setupBottomNav() {
+        updateBottomNav()
         bottomNav.selectedItemId = R.id.nav_home
         bottomNav.setOnItemSelectedListener { item ->
+            if (item.itemId == bottomNav.selectedItemId) return@setOnItemSelectedListener true
             when (item.itemId) {
                 R.id.nav_home -> true
                 R.id.nav_listings -> {
-                    when (role) {
+                    when (currentRole()) {
                         "admin" -> AdminBottomSheet().show(supportFragmentManager, "admin")
                         "buyer" -> CollectionBottomSheet().show(supportFragmentManager, "collection")
                         else    -> MyListingsBottomSheet().show(supportFragmentManager, "listings")
@@ -147,14 +162,16 @@ class HomeActivity : AppCompatActivity() {
                     false
                 }
                 R.id.nav_account -> {
-                    AccountBottomSheet().show(supportFragmentManager, "account")
+                    if (accountSheet == null) {
+                        accountSheet = AccountBottomSheet()
+                    }
+                    accountSheet?.show(supportFragmentManager, "account")
                     false
                 }
                 else -> false
             }
         }
     }
-
     private fun observeViewModel() {
         viewModel.books.observe(this) { books ->
             adapter.submitList(books)

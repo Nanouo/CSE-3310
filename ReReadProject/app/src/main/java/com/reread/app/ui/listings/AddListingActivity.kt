@@ -35,7 +35,7 @@ class AddListingActivity : AppCompatActivity() {
     private val pickImageLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
+        if (result.resultCode == RESULT_OK) {
             result.data?.data?.let { uri ->
                 selectedImageUri = uri
                 ivBookImage.setImageURI(uri)
@@ -47,7 +47,7 @@ class AddListingActivity : AppCompatActivity() {
     private val cameraLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
+        if (result.resultCode == RESULT_OK) {
             selectedImageUri = cameraImageUri
             ivBookImage.setImageURI(cameraImageUri)
             ivBookImage.visibility = View.VISIBLE
@@ -98,7 +98,7 @@ class AddListingActivity : AppCompatActivity() {
         spinnerCondition.adapter = ArrayAdapter(
             this, android.R.layout.simple_spinner_dropdown_item, conditions
         )
-        val categories = arrayOf("Academic", "Fiction", "Non-Fiction", "Biography", "Documentary")
+        val categories = arrayOf("Pornography","Academic", "Fiction", "Non-Fiction", "Biography", "Documentary")
         spinnerCategory.adapter = ArrayAdapter(
             this, android.R.layout.simple_spinner_dropdown_item, categories
         )
@@ -166,7 +166,7 @@ class AddListingActivity : AppCompatActivity() {
         }
 
         progressBar.visibility = View.GONE
-        setResult(Activity.RESULT_OK)
+        setResult(RESULT_OK)
         finish()
     }
 }

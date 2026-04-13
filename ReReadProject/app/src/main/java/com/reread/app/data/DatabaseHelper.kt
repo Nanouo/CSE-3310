@@ -104,6 +104,7 @@ class DatabaseHelper(context: Context) :
     private fun seedSampleBooks(db: SQLiteDatabase) {
         val now = System.currentTimeMillis().toString()
         val books = listOf(
+            arrayOf("Porn", "John Porn", "3", "0.01", "Poor", "Pornography", "Dystopian", "I coomed :("),
             arrayOf("1984", "George Orwell", "9780451524935", "8.99", "Good", "Fiction", "Dystopian", "Classic dystopian novel in good condition."),
             arrayOf("Clean Code", "Robert C. Martin", "9780132350884", "24.99", "Like New", "Academic", "Programming", "Barely used. Great for CS students."),
             arrayOf("Sapiens", "Yuval Noah Harari", "9780062316097", "12.50", "Fair", "Non-Fiction", "History", "Some highlighting but very readable."),
