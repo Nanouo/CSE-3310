@@ -1,5 +1,29 @@
-# Default ignored files
-/shelf/
-/.idea
+# Gradle
+.gradle/
+build/
+*.gradle.kts.dsl-cache
+
+# Local properties (contains local SDK path - different for each machine)
+local.properties
+
+# IDE - Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Build outputs
+app/build/
 */build/
-.gradle
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keystore files (never commit these!)
+*.jks
+*.keystore
