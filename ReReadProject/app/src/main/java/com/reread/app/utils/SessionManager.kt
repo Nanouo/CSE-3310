@@ -14,6 +14,15 @@ class SessionManager(context: Context) {
         private const val KEY_EMAIL = "email"
         private const val KEY_ROLE = "role"
         private const val KEY_IS_LOGGED_IN = "is_logged_in"
+        private var roleListener: (() -> Unit)? = null
+
+        fun setRoleChangeListener(listener: () -> Unit) {
+            roleListener = listener
+        }
+
+        fun notifyRoleChanged() {
+            roleListener?.invoke()
+        }
     }
 
     fun save(user: User) {
@@ -32,6 +41,7 @@ class SessionManager(context: Context) {
 
     fun setRole(newRole: String) {
         prefs.edit().putString(KEY_ROLE, newRole).apply()
+        notifyRoleChanged()
     }
     fun setDarkMode(enabled: Boolean) {
         prefs.edit().putBoolean("dark_mode", enabled).apply()

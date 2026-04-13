@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.Cursor
 
 
-class BookRepository(context: Context) {
+class BookRepository(private val context: Context) {
 
     private val db = DatabaseHelper(context).readableDatabase
 
@@ -83,5 +83,16 @@ class BookRepository(context: Context) {
             )
         }
         return list
+    }
+    fun deleteBookById(bookId: Int): Boolean {
+        val dbHelper = DatabaseHelper(context)
+        val db = dbHelper.writableDatabase
+        val rowsDeleted = db.delete(
+            DatabaseHelper.TABLE_BOOKS,
+            "${DatabaseHelper.COL_BOOK_ID} = ?",
+            arrayOf(bookId.toString())
+        )
+        db.close()
+        return rowsDeleted > 0
     }
 }

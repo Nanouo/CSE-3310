@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_light">#FFF5F5F5</color>
+    <color name="gray_medium">#FF666666</color>
+    <color name="primary">#FF1A1A1A</color>
+    <color name="chip_text_selected">#FFFFFF</color>
+    <color name="chip_text_unselected">#1A1A1A</color>
+    <color name="background">#121212</color>
+    <color name="textColor">#FF666666</color>
+    <color name="buttonTextColor">#FF666666</color>
+    <color name="labelColor">#FF000000</color>
+    <color name="searchBarColor">#FF666666</color>
+    <color name="navIconColor">#FF666666</color>
+</resources>

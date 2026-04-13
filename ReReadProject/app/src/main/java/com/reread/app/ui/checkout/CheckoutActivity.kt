@@ -82,7 +82,10 @@ class CheckoutActivity : AppCompatActivity() {
         val collectionRepo = com.reread.app.data.CollectionRepository(this)
         val session = com.reread.app.utils.SessionManager(this)
         collectionRepo.savePurchase(session.userId, order.id, order.items)
-
+        val bookRepo = com.reread.app.data.BookRepository(this)
+        order.items.forEach { item ->
+            bookRepo.deleteBookById(item.bookId)
+        }
         CartManager.clear()
 
         val intent = Intent(this, OrderConfirmationActivity::class.java)

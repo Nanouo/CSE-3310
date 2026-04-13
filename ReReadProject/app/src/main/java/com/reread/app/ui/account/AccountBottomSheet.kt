@@ -41,18 +41,15 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
 
         btnBuyer.setOnClickListener {
             session.setRole("buyer")
-            dismiss()
-            restartHome()
+            updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
         }
         btnSeller.setOnClickListener {
             session.setRole("seller")
-            dismiss()
-            restartHome()
+            updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
         }
         btnAdmin.setOnClickListener {
             session.setRole("admin")
-            dismiss()
-            restartHome()
+            updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
         }
 
         // Dark mode toggle
@@ -68,6 +65,7 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
                 session.setDarkMode(false)
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
+            dismiss()
         }
 
         view.findViewById<Button>(R.id.btn_logout).setOnClickListener {
@@ -91,9 +89,9 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
         }
     }
 
-    private fun restartHome() {
+    /*private fun restartHome() {
         val intent = Intent(requireContext(), com.reread.app.ui.home.HomeActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-    }
+    }*/
 }

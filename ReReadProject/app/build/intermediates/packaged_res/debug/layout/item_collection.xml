@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
+    android:background="@color/background"
     app:cardCornerRadius="8dp"
     app:cardElevation="2dp">
 
@@ -36,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:textColor="#1A1A1A"
+                android:textColor="@color/black"
                 android:maxLines="2"
                 android:ellipsize="end"/>
 
@@ -61,7 +62,7 @@
                     android:layout_weight="1"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:textColor="#1A1A1A"/>
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tv_col_condition"
@@ -69,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="11sp"
                     android:textColor="@color/gray_medium"
-                    android:background="@color/gray_light"
+                    android:background="@color/labelColor"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:paddingTop="2dp"

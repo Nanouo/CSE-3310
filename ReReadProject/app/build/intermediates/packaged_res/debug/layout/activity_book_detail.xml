@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -43,14 +43,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"/>
+                android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/tv_detail_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
-                android:textColor="@color/gray_medium"
+                android:textColor="@color/textColor"
                 android:layout_marginTop="4dp"/>
 
             <TextView
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"
+                android:textColor="@color/textColor"
                 android:layout_marginTop="12dp"/>
 
             <TextView
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/gray_medium"
+                android:textColor="@color/textColor"
                 android:layout_marginTop="6dp"/>
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/gray_medium"
+                android:textColor="@color/textColor"
                 android:layout_marginTop="4dp"/>
 
             <View
@@ -91,14 +91,14 @@
                 android:text="Description"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#1A1A1A"/>
+                android:textColor="@color/textColor"/>
 
             <TextView
                 android:id="@+id/tv_detail_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="#444444"
+                android:textColor="@color/textColor"
                 android:layout_marginTop="6dp"
                 android:lineSpacingMultiplier="1.4"/>
 
@@ -114,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
-                android:textColor="@color/gray_medium"/>
+                android:textColor="@color/textColor"/>
 
             <Button
                 android:id="@+id/btn_add_to_cart"
@@ -125,7 +125,7 @@
                 android:text="Add to Cart"
                 android:textSize="16sp"
                 android:backgroundTint="#1A1A1A"
-                android:textColor="@color/white"/>
+                android:textColor="@color/buttonTextColor"/>
 
             <TextView
                 android:id="@+id/tv_switch_to_buyer"
