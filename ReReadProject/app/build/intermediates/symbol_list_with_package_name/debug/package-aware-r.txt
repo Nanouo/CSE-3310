@@ -3487,6 +3487,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id photo_placeholder
 id pin
 id position
 id postLayout

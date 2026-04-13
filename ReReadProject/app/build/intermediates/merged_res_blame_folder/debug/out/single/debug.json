@@ -76,10 +76,6 @@
         "source": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-main-39:\\layout\\activity_cart.xml"
     },
     {
-        "merged": "com.reread.app-merged_res-37:/layout_item_my_listing.xml.flat",
-        "source": "com.reread.app-main-39:/layout/item_my_listing.xml"
-    },
-    {
         "merged": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-merged_res-37:\\layout_bottom_sheet_account.xml.flat",
         "source": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-main-39:\\layout\\bottom_sheet_account.xml"
     },
@@ -128,10 +124,6 @@
         "source": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-main-39:\\layout\\activity_add_listing.xml"
     },
     {
-        "merged": "com.reread.app-merged_res-37:/layout_activity_register.xml.flat",
-        "source": "com.reread.app-main-39:/layout/activity_register.xml"
-    },
-    {
         "merged": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-merged_res-37:\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-main-39:\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -142,6 +134,10 @@
     {
         "merged": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-merged_res-37:\\layout_item_my_listing.xml.flat",
         "source": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-main-39:\\layout\\item_my_listing.xml"
+    },
+    {
+        "merged": "com.reread.app-merged_res-37:/layout_activity_add_listing.xml.flat",
+        "source": "com.reread.app-main-39:/layout/activity_add_listing.xml"
     },
     {
         "merged": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-merged_res-37:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -194,10 +190,6 @@
     {
         "merged": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-merged_res-37:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-main-39:\\drawable\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "com.reread.app-merged_res-37:/layout_bottom_sheet_my_listings.xml.flat",
-        "source": "com.reread.app-main-39:/layout/bottom_sheet_my_listings.xml"
     },
     {
         "merged": "C:\\Users\\Denni\\.gradle\\daemon\\8.5\\com.reread.app-merged_res-37:\\drawable_ic_admin.xml.flat",

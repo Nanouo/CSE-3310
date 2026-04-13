@@ -1,7 +1,5 @@
 package com.reread.app.ui.listings
 
-import android.app.Activity
-import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,8 +10,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.FileProvider
 import com.reread.app.R
 import com.reread.app.utils.SessionManager
+import java.io.File
 
 class AddListingActivity : AppCompatActivity() {
 
@@ -28,6 +28,7 @@ class AddListingActivity : AppCompatActivity() {
     private lateinit var spinnerCategory: Spinner
     private lateinit var btnSubmit: Button
     private lateinit var progressBar: ProgressBar
+    private lateinit var photoPlaceholder: View
 
     private var selectedImageUri: Uri? = null
     private var cameraImageUri: Uri? = null
@@ -40,19 +41,21 @@ class AddListingActivity : AppCompatActivity() {
                 selectedImageUri = uri
                 ivBookImage.setImageURI(uri)
                 ivBookImage.visibility = View.VISIBLE
+                photoPlaceholder.visibility = View.GONE
             }
         }
     }
 
-    private val cameraLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            selectedImageUri = cameraImageUri
-            ivBookImage.setImageURI(cameraImageUri)
-            ivBookImage.visibility = View.VISIBLE
+    private val cameraLauncher =
+        registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
+            if (success) {
+                ivBookImage.setImageURI(cameraImageUri)
+                ivBookImage.visibility = View.VISIBLE
+                photoPlaceholder.visibility = View.GONE
+            } else {
+                Toast.makeText(this, "Camera cancelled", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +78,7 @@ class AddListingActivity : AppCompatActivity() {
         spinnerCategory  = findViewById(R.id.spinner_category)
         btnSubmit        = findViewById(R.id.btn_submit)
         progressBar      = findViewById(R.id.progress_bar)
+        photoPlaceholder = findViewById(R.id.photo_placeholder)
 
         // Check if editing existing listing
         val editBookId = intent.getIntExtra("edit_book_id", -1)
@@ -120,19 +124,34 @@ class AddListingActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         pickImageLauncher.launch(intent)
     }
-
+    private val cameraPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+            if (granted) openCamera()
+            else Toast.makeText(this, "Camera permission denied", Toast.LENGTH_SHORT).show()
+        }
     private fun openCamera() {
-        val values = ContentValues().apply {
-            put(MediaStore.Images.Media.TITLE, "book_photo_${System.currentTimeMillis()}")
-            put(MediaStore.Images.Media.DESCRIPTION, "Book listing photo")
+        if (checkSelfPermission(android.Manifest.permission.CAMERA)
+            != android.content.pm.PackageManager.PERMISSION_GRANTED
+        ) {
+            cameraPermissionLauncher.launch(android.Manifest.permission.CAMERA)
+            return
         }
-        cameraImageUri = contentResolver.insert(
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values
+        val photoFile = File(cacheDir, "book_${System.currentTimeMillis()}.jpg")
+
+        cameraImageUri = FileProvider.getUriForFile(
+            this,
+            "${packageName}.fileprovider",
+            photoFile
         )
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE).apply {
-            putExtra(MediaStore.EXTRA_OUTPUT, cameraImageUri)
-        }
-        cameraLauncher.launch(intent)
+
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, cameraImageUri)
+
+        intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+        cameraLauncher.launch(cameraImageUri)
     }
 
     private fun submitListing(editBookId: Int) {
