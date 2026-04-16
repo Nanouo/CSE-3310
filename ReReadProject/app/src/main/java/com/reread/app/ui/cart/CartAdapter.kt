@@ -4,12 +4,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.reread.app.R
 import com.reread.app.data.CartItem
+import java.io.File
+import coil.load
 
 class CartAdapter(
     private val onRemoveClick: (CartItem) -> Unit
@@ -32,6 +35,7 @@ class CartAdapter(
         private val tvCondition: TextView = itemView.findViewById(R.id.tv_cart_condition)
         private val tvSeller: TextView = itemView.findViewById(R.id.tv_cart_seller)
         private val btnRemove: ImageButton = itemView.findViewById(R.id.btn_remove)
+        private val ivImage: ImageView = itemView.findViewById(R.id.iv_book_image)
 
         fun bind(item: CartItem) {
             tvTitle.text = item.title
@@ -40,6 +44,19 @@ class CartAdapter(
             tvCondition.text = item.condition
             tvSeller.text = "Sold by ${item.sellerUsername}"
             btnRemove.setOnClickListener { onRemoveClick(item) }
+            val path = item.imagePath.trim()
+            if (path.isNotEmpty()) {
+                ivImage.scaleType = ImageView.ScaleType.FIT_CENTER
+                ivImage.load(File(path)) {
+                    placeholder(R.drawable.placeholder_image)
+                    error(R.drawable.placeholder_image)
+                    crossfade(false)
+                    memoryCacheKey(path)
+                }
+            } else {
+                ivImage.scaleType = ImageView.ScaleType.CENTER_CROP
+                ivImage.setImageResource(R.drawable.placeholder_image)
+            }
         }
     }
 

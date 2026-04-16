@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,8 @@ import com.reread.app.data.MessagingRepository
 import com.reread.app.ui.cart.CartActivity
 import com.reread.app.ui.messaging.ChatActivity
 import com.reread.app.utils.SessionManager
+import coil.load
+import java.io.File
 
 class BookDetailActivity : AppCompatActivity() {
 
@@ -52,6 +55,22 @@ class BookDetailActivity : AppCompatActivity() {
         val tvSwitchMode     = findViewById<TextView>(R.id.tv_switch_to_buyer)
         val session          = SessionManager(this)
 
+        val imagePath = intent.getStringExtra("book_image_path") ?: ""
+        val ivImage = findViewById<ImageView>(R.id.iv_book_image)
+
+        if (imagePath.isNotBlank()) {
+            ivImage.scaleType = ImageView.ScaleType.FIT_CENTER
+
+            ivImage.load(File(imagePath)) {
+                placeholder(R.drawable.placeholder_image)
+                error(R.drawable.placeholder_image)
+                crossfade(true)
+            }
+        } else {
+            ivImage.scaleType = ImageView.ScaleType.CENTER_CROP
+            ivImage.load(R.drawable.placeholder_image)
+        }
+
         when (session.role) {
             "buyer" -> {
                 btnAddToCart.visibility     = View.VISIBLE
@@ -73,6 +92,7 @@ class BookDetailActivity : AppCompatActivity() {
                             price          = price,
                             condition      = condition,
                             category       = category,
+                            imagePath      = imagePath,
                             description    = desc
                         )
                         CartManager.addItem(book)

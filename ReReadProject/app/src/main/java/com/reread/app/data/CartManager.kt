@@ -14,6 +14,7 @@ object CartManager {
                     author = book.author,
                     price = book.price,
                     condition = book.condition,
+                    imagePath = book.imagePath,
                     sellerUsername = book.sellerUsername
                 )
             )

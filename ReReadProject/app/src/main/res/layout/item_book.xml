@@ -18,8 +18,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="210dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/gray_light">
+            android:layout_marginBottom="8dp">
 
             <ImageView
                 android:id="@+id/iv_book_image"

@@ -7,5 +7,6 @@ data class CartItem(
     val author: String,
     val price: Double,
     val condition: String,
+    val imagePath: String = "",
     val sellerUsername: String
 )

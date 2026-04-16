@@ -9,5 +9,6 @@ data class PurchasedBook(
     val author: String,
     val price: Double,
     val condition: String,
+    val imagePath: String = "",
     val purchasedAt: String = System.currentTimeMillis().toString()
 )

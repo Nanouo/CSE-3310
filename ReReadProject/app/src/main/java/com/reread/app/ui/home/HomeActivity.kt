@@ -185,6 +185,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun openBookDetail(book: Book) {
         val intent = Intent(this, BookDetailActivity::class.java)
+        intent.putExtra("book_image_path", book.imagePath)
         intent.putExtra("book_id", book.id)
         intent.putExtra("book_title", book.title)
         intent.putExtra("book_author", book.author)

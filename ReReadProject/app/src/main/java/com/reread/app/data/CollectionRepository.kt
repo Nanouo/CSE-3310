@@ -18,6 +18,7 @@ class CollectionRepository(context: Context) {
                 put("author", item.author)
                 put("price", item.price)
                 put("condition", item.condition)
+                put("image_path",item.imagePath)
                 put("purchased_at", System.currentTimeMillis().toString())
             }
             db.insert("purchased_books", null, values)
@@ -45,6 +46,7 @@ class CollectionRepository(context: Context) {
                     author      = getString(getColumnIndexOrThrow("author")),
                     price       = getDouble(getColumnIndexOrThrow("price")),
                     condition   = getString(getColumnIndexOrThrow("condition")),
+                    imagePath   = getString(getColumnIndexOrThrow("image_path")),
                     purchasedAt = getString(getColumnIndexOrThrow("purchased_at"))
                 )
             )

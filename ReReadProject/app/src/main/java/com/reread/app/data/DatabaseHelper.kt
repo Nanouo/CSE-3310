@@ -9,7 +9,7 @@ class DatabaseHelper(context: Context) :
 
     companion object {
         const val DATABASE_NAME = "reread.db"
-        const val DATABASE_VERSION = 4
+        const val DATABASE_VERSION = 5
 
         // Users table
         const val TABLE_USERS = "users"
@@ -91,6 +91,7 @@ class DatabaseHelper(context: Context) :
                 author       TEXT    NOT NULL,
                 price        REAL    NOT NULL,
                 condition    TEXT    NOT NULL,
+                image_path   TEXT    DEFAULT '',
                 purchased_at TEXT    NOT NULL
             )
             """.trimIndent()
@@ -224,6 +225,11 @@ class DatabaseHelper(context: Context) :
                     FOREIGN KEY(conversation_id) REFERENCES $TABLE_CONVERSATIONS(id)
                 )
                 """.trimIndent()
+            )
+        }
+        if (oldVersion < 5) {
+            db.execSQL(
+                "ALTER TABLE purchased_books ADD COLUMN image_path TEXT DEFAULT ''"
             )
         }
     }
