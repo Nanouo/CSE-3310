@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background parchment -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#E8E2D6"/>
+        </shape>
+    </item>
+    <item android:gravity="center">
+        <vector
+            android:width="64dp"
+            android:height="64dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#8C7A66"
+                android:pathData="M4,5c2,-1 5,-1 7,1v14c-2,-2 -5,-2 -7,-1z"/>
+            <path
+                android:fillColor="#A08C75"
+                android:pathData="M20,5c-2,-1 -5,-1 -7,1v14c2,-2 5,-2 7,-1z"/>
+            <path
+                android:fillColor="#6E5C49"
+                android:pathData="M11,6h2v14h-2z"/>
+
+        </vector>
+    </item>
+
+</layer-list>

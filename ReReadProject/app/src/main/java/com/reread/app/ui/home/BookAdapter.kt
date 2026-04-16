@@ -3,12 +3,15 @@ package com.reread.app.ui.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.reread.app.R
 import com.reread.app.data.Book
+import java.io.File
+import coil.load
 
 class BookAdapter(
     private val onBookClick: (Book) -> Unit
@@ -31,6 +34,7 @@ class BookAdapter(
         private val tvCondition: TextView = itemView.findViewById(R.id.tv_book_condition)
         private val tvCategory: TextView = itemView.findViewById(R.id.tv_book_category)
         private val tvSeller: TextView = itemView.findViewById(R.id.tv_book_seller)
+        private val ivImage: ImageView = itemView.findViewById(R.id.iv_book_image)
 
         fun bind(book: Book) {
             tvTitle.text = book.title
@@ -40,6 +44,16 @@ class BookAdapter(
             tvCategory.text = book.category
             tvSeller.text = "Sold by ${book.sellerUsername}"
             itemView.setOnClickListener { onBookClick(book) }
+            val path = book.imagePath.trim()
+            if (path.isNotEmpty()) {
+                ivImage.load(File(path)) {
+                    placeholder(R.drawable.placeholder_image)
+                    error(R.drawable.placeholder_image)
+                }
+            } else {
+                ivImage.scaleType = ImageView.ScaleType.CENTER_CROP
+                ivImage.load(R.drawable.placeholder_image)
+            }
         }
     }
 

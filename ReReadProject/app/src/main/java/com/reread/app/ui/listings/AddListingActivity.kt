@@ -32,28 +32,31 @@ class AddListingActivity : AppCompatActivity() {
 
     private var selectedImageUri: Uri? = null
     private var cameraImageUri: Uri? = null
+    private var selectedImageFile: File? = null
 
-    private val pickImageLauncher = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        if (result.resultCode == RESULT_OK) {
-            result.data?.data?.let { uri ->
-                selectedImageUri = uri
-                ivBookImage.setImageURI(uri)
-                ivBookImage.visibility = View.VISIBLE
-                photoPlaceholder.visibility = View.GONE
+    private val pickImageLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                result.data?.data?.let { uri ->
+                    val file = copyUriToFile(uri)
+
+                    selectedImageFile = file
+                    selectedImageUri = Uri.fromFile(file)
+
+                    ivBookImage.setImageURI(selectedImageUri)
+                    ivBookImage.visibility = View.VISIBLE
+                    photoPlaceholder.visibility = View.GONE
+                }
             }
         }
-    }
 
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.TakePicture()) { success ->
             if (success) {
+                selectedImageUri = cameraImageUri
                 ivBookImage.setImageURI(cameraImageUri)
                 ivBookImage.visibility = View.VISIBLE
                 photoPlaceholder.visibility = View.GONE
-            } else {
-                Toast.makeText(this, "Camera cancelled", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -97,6 +100,25 @@ class AddListingActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener { submitListing(editBookId) }
     }
 
+    private fun copyUriToFile(uri: Uri): File {
+        val input = contentResolver.openInputStream(uri)!!
+
+        val file = createImageFile()
+        file.outputStream().use { output ->
+            input.copyTo(output)
+        }
+
+        input.close()
+        return file
+    }
+
+    private fun createImageFile(): File {
+        val dir = File(getExternalFilesDir("books"), "images")
+        if (!dir.exists()) dir.mkdirs()
+
+        return File(dir, "book_${System.currentTimeMillis()}.jpg")
+    }
+
     private fun setupSpinners() {
         val conditions = arrayOf("New", "Like New", "Good", "Fair", "Poor")
         spinnerCondition.adapter = ArrayAdapter(
@@ -124,11 +146,13 @@ class AddListingActivity : AppCompatActivity() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         pickImageLauncher.launch(intent)
     }
+
     private val cameraPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
             if (granted) openCamera()
             else Toast.makeText(this, "Camera permission denied", Toast.LENGTH_SHORT).show()
         }
+
     private fun openCamera() {
         if (checkSelfPermission(android.Manifest.permission.CAMERA)
             != android.content.pm.PackageManager.PERMISSION_GRANTED
@@ -136,7 +160,8 @@ class AddListingActivity : AppCompatActivity() {
             cameraPermissionLauncher.launch(android.Manifest.permission.CAMERA)
             return
         }
-        val photoFile = File(cacheDir, "book_${System.currentTimeMillis()}.jpg")
+
+        val photoFile = createImageFile()
 
         cameraImageUri = FileProvider.getUriForFile(
             this,
@@ -144,12 +169,7 @@ class AddListingActivity : AppCompatActivity() {
             photoFile
         )
 
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, cameraImageUri)
-
-        intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        selectedImageFile = photoFile
 
         cameraLauncher.launch(cameraImageUri)
     }
@@ -173,7 +193,7 @@ class AddListingActivity : AppCompatActivity() {
         btnSubmit.isEnabled    = false
 
         val session   = SessionManager(this)
-        val imagePath = selectedImageUri?.toString() ?: intent.getStringExtra("edit_image") ?: ""
+        val imagePath = selectedImageFile?.absolutePath ?: ""
         val repo      = com.reread.app.data.WritableBookRepository(this)
 
         if (editBookId != -1) {
