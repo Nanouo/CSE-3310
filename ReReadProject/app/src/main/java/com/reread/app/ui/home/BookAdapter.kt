@@ -46,20 +46,29 @@ class BookAdapter(
             itemView.setOnClickListener { onBookClick(book) }
             val path = book.imagePath.trim()
             if (path.isNotEmpty()) {
+                ivImage.scaleType = ImageView.ScaleType.FIT_CENTER
                 ivImage.load(File(path)) {
                     placeholder(R.drawable.placeholder_image)
                     error(R.drawable.placeholder_image)
+                    crossfade(false)
+                    memoryCacheKey(path)
                 }
             } else {
                 ivImage.scaleType = ImageView.ScaleType.CENTER_CROP
-                ivImage.load(R.drawable.placeholder_image)
+                ivImage.setImageResource(R.drawable.placeholder_image)
             }
         }
     }
 
     class BookDiffCallback : DiffUtil.ItemCallback<Book>() {
         override fun areItemsTheSame(oldItem: Book, newItem: Book) = oldItem.id == newItem.id
-        override fun areContentsTheSame(oldItem: Book, newItem: Book) = oldItem == newItem
+        override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
+            return oldItem.id == newItem.id &&
+                    oldItem.title == newItem.title &&
+                    oldItem.author == newItem.author &&
+                    oldItem.price == newItem.price &&
+                    oldItem.imagePath == newItem.imagePath
+        }
     }
 }
 
