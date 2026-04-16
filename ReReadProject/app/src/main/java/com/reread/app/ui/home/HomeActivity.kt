@@ -39,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var btnAccount: LinearLayout
     private lateinit var tvListings: TextView
     private lateinit var ivListings: ImageView
+    private var selectedCategory: String = "All"
     private val categories = listOf("All", "Academic", "Fiction", "Non-Fiction", "Biography", "Documentary")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,6 +109,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        viewModel.filterByCategory(selectedCategory)
     }
 
     private fun setupRecyclerView() {
@@ -124,7 +126,9 @@ class HomeActivity : AppCompatActivity() {
                 return true
             }
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText.isNullOrBlank()) viewModel.loadAllBooks()
+                if (newText.isNullOrBlank()) {
+                    viewModel.filterByCategory(selectedCategory)
+                }
                 return true
             }
         })
@@ -152,13 +156,17 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun selectCategory(category: String, chip: TextView) {
+        selectedCategory = category
+
         for (i in 0 until categoryContainer.childCount) {
             val c = categoryContainer.getChildAt(i) as? TextView ?: continue
             c.setBackgroundResource(R.drawable.chip_unselected)
             c.setTextColor(ContextCompat.getColor(this, R.color.chip_text_unselected))
         }
+
         chip.setBackgroundResource(R.drawable.chip_selected)
         chip.setTextColor(ContextCompat.getColor(this, R.color.chip_text_selected))
+
         viewModel.filterByCategory(category)
     }
 
