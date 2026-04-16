@@ -110,10 +110,12 @@
             android:textSize="15sp"
             android:textColor="@color/textColor"/>
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/switch_dark_mode"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:thumbTint="@color/primary"
+            android:trackTint="@color/gray_medium"/>
 
     </LinearLayout>
 

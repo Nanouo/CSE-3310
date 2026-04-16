@@ -6,13 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Switch
+import com.google.android.material.switchmaterial.SwitchMaterial
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.reread.app.R
 import com.reread.app.ui.auth.LoginActivity
 import com.reread.app.utils.SessionManager
+import androidx.core.graphics.toColorInt
 
 class AccountBottomSheet : BottomSheetDialogFragment() {
 
@@ -42,21 +43,18 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
         btnBuyer.setOnClickListener {
             session.setRole("buyer")
             updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
-            dismiss()
         }
         btnSeller.setOnClickListener {
             session.setRole("seller")
             updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
-            dismiss()
         }
         btnAdmin.setOnClickListener {
             session.setRole("admin")
             updateButtons(btnBuyer, btnSeller, btnAdmin, session.role)
-            dismiss()
         }
 
         // Dark mode toggle
-        val switchDarkMode = view.findViewById<Switch>(R.id.switch_dark_mode)
+        val switchDarkMode = view.findViewById<SwitchMaterial>(R.id.switch_dark_mode)
         val currentMode = AppCompatDelegate.getDefaultNightMode()
         switchDarkMode.isChecked = currentMode == AppCompatDelegate.MODE_NIGHT_YES
 
@@ -68,7 +66,6 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
                 session.setDarkMode(false)
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
-            dismiss()
         }
 
         view.findViewById<Button>(R.id.btn_logout).setOnClickListener {
@@ -80,10 +77,10 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun updateButtons(btnBuyer: Button, btnSeller: Button, btnAdmin: Button, role: String) {
-        val active       = android.graphics.Color.parseColor("#1A1A1A")
-        val inactive     = android.graphics.Color.parseColor("#E0E0E0")
-        val activeText   = android.graphics.Color.parseColor("#FFFFFF")
-        val inactiveText = android.graphics.Color.parseColor("#1A1A1A")
+        val active       = "#1A1A1A".toColorInt()
+        val inactive     = "#E0E0E0".toColorInt()
+        val activeText   = "#FFFFFF".toColorInt()
+        val inactiveText = "#1A1A1A".toColorInt()
         listOf(btnBuyer to "buyer", btnSeller to "seller", btnAdmin to "admin").forEach { (btn, r) ->
             btn.backgroundTintList = android.content.res.ColorStateList.valueOf(
                 if (r == role) active else inactive
@@ -91,7 +88,6 @@ class AccountBottomSheet : BottomSheetDialogFragment() {
             btn.setTextColor(if (r == role) activeText else inactiveText)
         }
     }
-
     /*private fun restartHome() {
         val intent = Intent(requireContext(), com.reread.app.ui.home.HomeActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

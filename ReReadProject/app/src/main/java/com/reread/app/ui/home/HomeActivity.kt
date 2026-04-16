@@ -3,6 +3,7 @@ package com.reread.app.ui.home
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -12,7 +13,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.reread.app.R
 import com.reread.app.data.Book
 import com.reread.app.ui.account.AccountBottomSheet
@@ -34,14 +34,22 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var tvEmpty: TextView
     private lateinit var searchView: SearchView
     private lateinit var categoryContainer: LinearLayout
-    private lateinit var bottomNav: BottomNavigationView
-
+    private lateinit var btnListings: LinearLayout
+    private lateinit var btnInbox: LinearLayout
+    private lateinit var btnAccount: LinearLayout
+    private lateinit var tvListings: TextView
+    private lateinit var ivListings: ImageView
     private val categories = listOf("All", "Academic", "Fiction", "Non-Fiction", "Biography", "Documentary")
-    private var accountSheet: AccountBottomSheet? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        btnListings = findViewById(R.id.btn_listings)
+        btnInbox = findViewById(R.id.btn_inbox)
+        btnAccount = findViewById(R.id.btn_account)
+        tvListings = findViewById(R.id.tv_listings)
+        ivListings = findViewById(R.id.ic_listings)
 
         session = SessionManager(this)
         recyclerView      = findViewById(R.id.rv_books)
@@ -49,8 +57,22 @@ class HomeActivity : AppCompatActivity() {
         tvEmpty           = findViewById(R.id.tv_empty)
         searchView        = findViewById(R.id.search_view)
         categoryContainer = findViewById(R.id.category_container)
-        bottomNav         = findViewById(R.id.bottom_navigation)
+        //bottomNav         = findViewById(R.id.bottom_navigation)
+        btnListings.setOnClickListener {
+            when (currentRole()) {
+                "admin" -> AdminBottomSheet().show(supportFragmentManager, "admin")
+                "buyer" -> CollectionBottomSheet().show(supportFragmentManager, "collection")
+                else -> MyListingsBottomSheet().show(supportFragmentManager, "listings")
+            }
+        }
 
+        btnInbox.setOnClickListener {
+            startActivity(Intent(this, InboxActivity::class.java))
+        }
+
+        btnAccount.setOnClickListener {
+            AccountBottomSheet().show(supportFragmentManager, "account")
+        }
         findViewById<android.widget.ImageButton>(R.id.btn_cart).setOnClickListener {
             startActivity(Intent(this, com.reread.app.ui.cart.CartActivity::class.java))
         }
@@ -58,18 +80,34 @@ class HomeActivity : AppCompatActivity() {
         setupRecyclerView()
         setupSearch()
         setupCategories()
-        setupBottomNav()
         observeViewModel()
+        refreshRoleUI()
         SessionManager.setRoleChangeListener {
             runOnUiThread {
-                updateBottomNav()
+                refreshRoleUI()
+            }
+        }
+    }
+
+    private fun refreshRoleUI() {
+        when (currentRole()) {
+            "admin" -> {
+                tvListings.text = "Admin Panel"
+                ivListings.setImageResource(R.drawable.ic_admin)
+            }
+            "buyer" -> {
+                tvListings.text = "Collection"
+                ivListings.setImageResource(R.drawable.ic_collection)
+            }
+            else -> {
+                tvListings.text = "My Listings"
+                ivListings.setImageResource(R.drawable.ic_listings)
             }
         }
     }
 
     override fun onResume() {
         super.onResume()
-        updateBottomNav()
     }
 
     private fun setupRecyclerView() {
@@ -125,64 +163,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun currentRole() = session.role
-
-    private fun updateBottomNav() {
-        val menu = bottomNav.menu
-        menu.clear()
-
-        val role = session.role
-
-        menu.add(0, R.id.nav_home, 0, "Home")
-            .setIcon(R.drawable.ic_home)
-
-        when (role) {
-            "admin" -> menu.add(0, R.id.nav_listings, 1, "Admin Panel")
-                .setIcon(R.drawable.ic_admin)
-            "buyer" -> menu.add(0, R.id.nav_listings, 1, "Collection")
-                .setIcon(R.drawable.ic_collection)
-            else -> menu.add(0, R.id.nav_listings, 1, "My Listings")
-                .setIcon(R.drawable.ic_listings)
-        }
-
-        menu.add(0, R.id.nav_inbox, 2, "Inbox")
-            .setIcon(R.drawable.ic_inbox)
-
-        menu.add(0, R.id.nav_account, 3, "Account")
-            .setIcon(R.drawable.ic_account)
-
-        bottomNav.selectedItemId = R.id.nav_home
-    }
-
-    private fun setupBottomNav() {
-        updateBottomNav()
-        bottomNav.selectedItemId = R.id.nav_home
-        bottomNav.setOnItemSelectedListener { item ->
-            if (item.itemId == bottomNav.selectedItemId) return@setOnItemSelectedListener true
-            when (item.itemId) {
-                R.id.nav_home -> true
-                R.id.nav_listings -> {
-                    when (currentRole()) {
-                        "admin" -> AdminBottomSheet().show(supportFragmentManager, "admin")
-                        "buyer" -> CollectionBottomSheet().show(supportFragmentManager, "collection")
-                        else    -> MyListingsBottomSheet().show(supportFragmentManager, "listings")
-                    }
-                    false
-                }
-                R.id.nav_inbox -> {
-                    startActivity(Intent(this, InboxActivity::class.java))
-                    false
-                }
-                R.id.nav_account -> {
-                    if (accountSheet == null) {
-                        accountSheet = AccountBottomSheet()
-                    }
-                    accountSheet?.show(supportFragmentManager, "account")
-                    false
-                }
-                else -> false
-            }
-        }
-    }
 
     private fun observeViewModel() {
         viewModel.books.observe(this) { books ->

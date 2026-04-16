@@ -92,13 +92,87 @@
             android:visibility="gone"/>
     </FrameLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <LinearLayout
+        android:id="@+id/action_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/background"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/navIconColor"
-        app:itemTextColor="@color/navIconColor"/>
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:id="@+id/btn_listings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ic_listings"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/navIconColor"
+                android:src="@drawable/ic_listings"/>
+
+            <TextView
+                android:id="@+id/tv_listings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Listings"
+                android:textColor="@color/navIconColor"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_inbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ic_inbox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/navIconColor"
+                android:src="@drawable/ic_inbox"/>
+
+            <TextView
+                android:id="@+id/tv_inbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inbox"
+                android:textColor="@color/navIconColor"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/ic_account"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:tint="@color/navIconColor"
+                android:src="@drawable/ic_account"/>
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account"
+                android:textColor="@color/navIconColor"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
